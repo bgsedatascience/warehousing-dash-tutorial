@@ -437,3 +437,7 @@ def timeline(boxes, time_range):
 Now you can use the start/finish to filter your data, either in the SQL query or in the dataframe!
 
 Do the same for the same for the products!
+
+And now enjoy your beautiful dashboard:
+
+![](./screenshot.png)
