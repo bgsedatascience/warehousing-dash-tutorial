@@ -149,6 +149,9 @@ Now we just need to get some data into that graph. Let's get some data from your
 Now, put the data into the graph:
 
 ``` python
+# Import plotly graph objects as go!
+import plotly.graph_objs as go
+
 # replace the Graph in your layout so that it looks like this:
 # where df is your dataframe, dt is the datetime column,
 # and sales_amount is the sales amount column.
