@@ -449,15 +449,21 @@ And now enjoy your beautiful dashboard:
 
 Under the hood, Dash is using Flask, a popular Python web framework!
 
-`app.server` will recover the flask server itself. Given the flask server, we use other libraries to run the server on multiple threads. One of those is gevent. If you have the dash "app" variable in the module `yourapplication`, you simply need a `newfile.py` that looks like this:
+`app.server` will recover the flask server itself. Given the flask server, we use other libraries to run the server on multiple threads. One of those is gevent. If you have the dash "app" variable in the module `app.py`, you simply need a `server.py` that looks like this:
 
 
 ```python
 from gevent.pywsgi import WSGIServer
-from yourapplication import app
+from app import app
 
 http_server = WSGIServer(('', 5000), app.server)
 http_server.serve_forever()
 ```
 
-Now your production code runs `python newfile.py`!
+And change your `app.py` to get rid of the `run_server` line:
+
+``` python
+app.run_server(debug=True) # delete this line!
+```
+
+Now your production code runs `python server.py` and the server is listening on port 5000 (you can change that directly in the code)!
