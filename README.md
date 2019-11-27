@@ -444,3 +444,20 @@ Do the same for the same for the products!
 And now enjoy your beautiful dashboard:
 
 ![](./screenshot.png)
+
+## Deployment
+
+Under the hood, Dash is using Flask, a popular Python web framework!
+
+`app.server` will recover the flask server itself. Given the flask server, we use other libraries to run the server on multiple threads. One of those is gevent. If you have the dash "app" variable in the module `yourapplication`, you simply need a `newfile.py` that looks like this:
+
+
+```python
+from gevent.pywsgi import WSGIServer
+from yourapplication import app
+
+http_server = WSGIServer(('', 5000), app.server)
+http_server.serve_forever()
+```
+
+Now your production code runs `python newfile.py`!
