@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:300,400,600&display=swap');
+
+body {
+  font-weight: 300;
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #222;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: inherit;
+}
+
+.layout {
+  width: 85%;
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+.title {
+  font-size: 3em;
+  margin: 1.5em 0 0.3em 0;
+}
+
+.timeline-controls {
+  display: flex;
+  justify-content: space-around;
+  width: 70%;
+  margin: 0 auto;
+}
+
+.timeline-controls label {
+  font-size: 1.2em;
+}
+
+#year-slider {
+  width: 70%;
+}
+
+#products {
+  margin: 4em 0 0 0;
+}
